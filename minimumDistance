@@ -9,22 +9,22 @@ import java.util.regex.*;
 public class Solution {
 
     // Complete the minimumDistances function below.
-    static int minimumDistances(int[] a) 
+    static int minimumDistances(int[] a)
     {
         int minDistance = -1;
-        int temp = -1;
-        
+        int temp = -1;  // to hold temporary minDistance
+
         for (int i=0; i<a.length-1; i++)
         {
             for (int j=i+1; j<a.length; j++)
-                if (a[j] == a[i]) 
+                if (a[j] == a[i])
                 {
                     temp = j-i;
-                    break;               
+                    break;
                 }
             if (minDistance ==-1 || minDistance>temp) minDistance=temp;
         }
-        
+
         return minDistance;
 
 
